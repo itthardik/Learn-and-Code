@@ -1,0 +1,78 @@
+Assignment 1
+------------------------------------------------------------------------------------------------
+
+def rollDice(numberOfSides):
+    randomResult = random.randint(1, numberOfSides)
+    return randomResult
+
+def main():
+    numberOfSides = 6
+    isRolling = True
+    quit = "q"
+    while isRolling:
+        userInput = input("Ready to roll? Enter Q to Quit: ")
+        if userInput.lower() != quit:
+            rollResult = rollDice(numberOfSides)
+            print("You have rolled a", rollResult)
+        else:
+            isRolling = False
+
+
+Assignment 2
+------------------------------------------------------------------------------------------------
+
+MIN_NUMBER = 1
+MAX_NUMBER = 100
+
+def isValidGuess(userInput):
+    return userInput.isdigit() and MIN_NUMBER <= int(userInput) <= MAX_NUMBER
+
+def startGame():
+    numberToGuess = random.randint(MIN_NUMBER, MAX_NUMBER)
+    isWon = False
+    guessCount = 0
+    userGuess = input(f"Guess a number between {MIN_NUMBER} and {MAX_NUMBER}: ")
+
+    while not isWon:
+        if not isValidGuess(userGuess):
+            userGuess = input(f"Invalid input. Please enter a number between {MIN_NUMBER} and {MAX_NUMBER}: ")
+            continue
+
+        guessCount += 1
+        guessedNumber = int(userGuess)
+
+        if guessedNumber < numberToGuess:
+            userGuess = input("Too low. Guess again: ")
+        elif guessedNumber > numberToGuess:
+            userGuess = input("Too high. Guess again: ")
+        else:
+            print(f"Congratulations! You guessed the number in {guessCount} guesses!")
+            isWon = True
+
+
+Assignment 3
+------------------------------------------------------------------------------------------------
+
+def calculateArmstrong(number):
+    armstrongNumber = 0
+    digitCount = 0
+
+    tempNumber = number
+    while tempNumber > 0:
+        digitCount += 1
+        tempNumber //= 10
+
+    tempNumber = number
+    while tempNumber > 0:
+        digit = tempNumber % 10
+        armstrongNumber += digit ** digitCount
+        tempNumber //= 10
+
+    return armstrongNumber
+
+userInput = int(input("\nEnter a number to check if it is an Armstrong number: "))
+
+if userInput == calculateArmstrong(userInput):
+    print(f"\n{userInput} is an Armstrong number.\n")
+else:
+    print(f"\n{userInput} is not an Armstrong number.\n")
