@@ -1,0 +1,14 @@
+C:\Users\hardik.sharma\source\repos\chapter1L&C-ConsoleApp\bin\Debug\net8.0\chapter1L&C-ConsoleApp.exe
+C:\Users\hardik.sharma\source\repos\chapter1L&C-ConsoleApp\bin\Debug\net8.0\chapter1L&C-ConsoleApp.deps.json
+C:\Users\hardik.sharma\source\repos\chapter1L&C-ConsoleApp\bin\Debug\net8.0\chapter1L&C-ConsoleApp.runtimeconfig.json
+C:\Users\hardik.sharma\source\repos\chapter1L&C-ConsoleApp\bin\Debug\net8.0\chapter1L&C-ConsoleApp.dll
+C:\Users\hardik.sharma\source\repos\chapter1L&C-ConsoleApp\bin\Debug\net8.0\chapter1L&C-ConsoleApp.pdb
+C:\Users\hardik.sharma\source\repos\chapter1L&C-ConsoleApp\obj\Debug\net8.0\chapter1L&C-ConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hardik.sharma\source\repos\chapter1L&C-ConsoleApp\obj\Debug\net8.0\chapter1L&C-ConsoleApp.AssemblyInfoInputs.cache
+C:\Users\hardik.sharma\source\repos\chapter1L&C-ConsoleApp\obj\Debug\net8.0\chapter1L&C-ConsoleApp.AssemblyInfo.cs
+C:\Users\hardik.sharma\source\repos\chapter1L&C-ConsoleApp\obj\Debug\net8.0\chapter1L&C-ConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\hardik.sharma\source\repos\chapter1L&C-ConsoleApp\obj\Debug\net8.0\chapter1L&C-ConsoleApp.dll
+C:\Users\hardik.sharma\source\repos\chapter1L&C-ConsoleApp\obj\Debug\net8.0\refint\chapter1L&C-ConsoleApp.dll
+C:\Users\hardik.sharma\source\repos\chapter1L&C-ConsoleApp\obj\Debug\net8.0\chapter1L&C-ConsoleApp.pdb
+C:\Users\hardik.sharma\source\repos\chapter1L&C-ConsoleApp\obj\Debug\net8.0\chapter1L&C-ConsoleApp.genruntimeconfig.cache
+C:\Users\hardik.sharma\source\repos\chapter1L&C-ConsoleApp\obj\Debug\net8.0\ref\chapter1L&C-ConsoleApp.dll
