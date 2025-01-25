@@ -1,27 +1,33 @@
 public class CustomerSearch
 {
-    public List<Customer> SearchByCountry(string country){
-        var query = from c in db.customers where c.Country.Contains(country) orderby c.CustomerID ascending select c;
+    public List<Customer> SearchByCountry(string country) => SearchCustomers(country, c => c.Country);
+    public List<Customer> SearchByCompanyName(string company) => SearchCustomers(company, c => c.CompanyName);
+    public List<Customer> SearchByContact(string contact) => SearchCustomers(contact, c => c.ContactName);
+
+    private List<Customer> SearchCustomers(string filterKey, Func<Customer, string> filterProperty)
+    {
+        var query = from customer in db.customers
+                    where filterProperty(customer).Contains(filterKey)
+                    orderby customer.CustomerID ascending
+                    select customer;
         return query.ToList();
     }
+}
 
-    public List<Customer> SearchByCompanyName(string company) { 
-        var query = from c in db.customers where c.Country.Contains(company) orderby c.CustomerID ascending select c;
-        return query.ToList();
-    }
-
-    public List<Customer> SearchByContact(string contact) { 
-        var query = from c in db.customers where c.Country.Contains(contact) orderby c.CustomerID ascending select c; 
-        return query.ToList();
-    }
-
-    public string ConvertToCSV(List<Customer> customers) {
+public class CustomerDataExporter
+{
+    public string GenerateCSV(List<Customer> customers) {
         StringBuilder stringBuilder = new StringBuilder();
         foreach(var customer in customers)
         {
-            stringBuilder.AppendFormat("{0}, {1}, {2}, {3}", customer.CustomerID, customer.CompanyName, customer.ContactName, customer.Country);
+            stringBuilder.AppendFormat(GetCSVString(customer));
             stringBuilder.AppendLine();
         }
         return stringBuilder.ToString();
     }
-} 
+
+    private static string GetCSVString(Customer customer)
+    {
+        return $"{customer.CustomerID},{customer.CompanyName},{customer.ContactName},{customer.Country}";
+    }
+}

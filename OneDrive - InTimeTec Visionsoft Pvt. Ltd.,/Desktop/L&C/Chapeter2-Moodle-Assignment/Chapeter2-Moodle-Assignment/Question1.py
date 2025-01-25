@@ -11,7 +11,7 @@ def PlayNumberGuessingGame():
     print("Welcome to the Number Guessing Game!")
 
     while True:
-        guess = HandleUserInput()
+        guess = GetValidUserInput()
         attempts += 1
         feedback = ProvideFeedback(targetNumber, guess)
 
@@ -29,7 +29,7 @@ def GenerateTargetNumber():
     return random.randint(LOWER_BOUND, UPPER_BOUND)
 
 
-def HandleUserInput():
+def GetValidUserInput():
     while True:
         userInput = input(f"Enter your guess (between {LOWER_BOUND} and {UPPER_BOUND}): ")
         if IsValidGuess(userInput):
@@ -46,4 +46,5 @@ def ProvideFeedback(targetNumber, guess):
         return LOW
     elif guess > targetNumber:
         return HIGH
+    
     return CORRECT
