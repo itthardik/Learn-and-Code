@@ -1,0 +1,62 @@
+Question 1:
+	Answer:
+		In the given code, employee is a data structure, not a true object.
+
+	Reason:
+		As per Chapter - Objects and Data Structures, Data structure exposes data and has little or no behavior while an object hides data and exposes behavior.
+    Since Employee only uses getters and setters without meaningful behavior, it exposes its internal data, making employee a data structure functionally.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Question 2:
+	Answer:
+		Yes, Better approach is to move the payment behavior inside the Customer class, so only Customer manages how and when money is deducted.
+    This protects the internal state and promotes encapsulation.
+
+	Refactored Code:
+		public class Customer {
+			private String firstName;
+			private String lastName;
+			private Wallet myWallet;
+
+			public String getFirstName() {
+				return firstName;
+			}
+
+			public String getLastName() {
+				return lastName;
+			}
+
+			public boolean makePayment(float amount) {
+				if (myWallet.getTotalMoney() >= amount) {
+					myWallet.subtractMoney(amount);
+					return true;
+				}
+				return false;
+			}
+		}
+		public class Wallet {
+			private float value;
+
+			public float getTotalMoney() {
+				return value;
+			}
+
+			public void addMoney(float deposit) {
+				value += deposit;
+			}
+
+			public void subtractMoney(float debit) {
+				value -= debit;
+			}
+		}
+		
+	Updated Client Code:
+		if (myCustomer.makePayment(payment)) {
+			// payment successful
+		} else {
+			// come back later and get my money
+		}
+
+
+
