@@ -1,0 +1,11 @@
+﻿# Run tests and output results in TRX format (used by Azure DevOps and other CI tools)
+dotnet test --logger "trx;LogFileName=TestResults.trx"
+
+# Run tests with code coverage collection using Coverlet and output in Cobertura format (common format for coverage tools)
+dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura
+
+# Run tests with cross-platform code coverage collection enabled (generates coverage.cobertura.xml file)
+dotnet test --collect:"XPlat Code Coverage"
+
+# Generate a human-readable HTML code coverage report from the Cobertura XML files
+reportgenerator -reports:"TestResults/**/*.cobertura.xml" -targetdir:"TestResults/coverage-report" -reporttypes:Html
